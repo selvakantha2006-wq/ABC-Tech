@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>ABC Technologies | Employee Intranet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="login-screen" class="login-screen">
+    <section class="login-card" aria-labelledby="login-title">
+      <a class="brand login-brand" href="#" aria-label="ABC Technologies home">
+        <span class="brand-mark">A</span>
+        <span class="brand-name">ABC <span>Technologies</span></span>
+      </a>
+      <div class="login-heading">
+        <p class="eyebrow">EMPLOYEE PORTAL</p>
+        <h1 id="login-title">Welcome back</h1>
+        <p>Sign in to stay connected with your team.</p>
+      </div>
+      <form id="login-form" class="login-form">
+        <label for="employee-id">Employee ID</label>
+        <input id="employee-id" name="employeeId" type="text" placeholder="Enter your employee ID" autocomplete="username" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+        <p id="login-error" class="form-error" role="alert" hidden>That employee ID or password isn’t correct. Please try again.</p>
+        <button class="button button-primary login-submit" type="submit">Sign in <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="demo-hint">
+        <span class="demo-icon" aria-hidden="true">i</span>
+        <p><strong>Demo access</strong><br>Employee ID: EMP001 &nbsp;·&nbsp; Password: 12345</p>
+      </div>
+      <p class="login-footnote">A better workday starts here.</p>
+    </section>
+    <aside class="login-art" aria-label="A connected team at work">
+      <div class="art-orb orb-one"></div>
+      <div class="art-orb orb-two"></div>
+      <div class="art-content">
+        <span class="art-kicker">ONE TEAM. ONE VISION.</span>
+        <h2>Great things happen when we work together.</h2>
+        <p>Your home for company news, people, and everything happening at ABC.</p>
+        <div class="art-stats">
+          <div><strong>50</strong><span>team members</span></div>
+          <div><strong>5</strong><span>departments</span></div>
+          <div><strong>1</strong><span>shared vision</span></div>
+        </div>
+      </div>
+      <span class="art-footer">ABC TECHNOLOGIES &nbsp;·&nbsp; EMPLOYEE INTRANET</span>
+    </aside>
+  </main>
+
+  <div id="app-shell" class="app-shell" hidden>
+    <aside id="sidebar" class="sidebar">
+      <a class="brand sidebar-brand" href="#" aria-label="ABC Technologies dashboard">
+        <span class="brand-mark">A</span>
+        <span class="brand-name">ABC <span>Technologies</span></span>
+      </a>
+      <div class="nav-caption">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link active" type="button" data-page="dashboard">
+          <span class="nav-icon" aria-hidden="true">▦</span><span>Dashboard</span>
+        </button>
+        <button class="nav-link" type="button" data-page="departments">
+          <span class="nav-icon" aria-hidden="true">♧</span><span>Employee directory</span>
+        </button>
+        <button class="nav-link" type="button" data-page="announcements">
+          <span class="nav-icon" aria-hidden="true">▤</span><span>Company updates</span>
+          <span id="announcement-badge" class="nav-badge"></span>
+        </button>
+        <button class="nav-link" type="button" data-page="holidays">
+          <span class="nav-icon" aria-hidden="true">▣</span><span>Holidays</span>
+        </button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-spark" aria-hidden="true">✦</span>
+          <strong>Need a hand?</strong>
+          <p>Reach out to your HR team for support.</p>
+          <a href="mailto:hr@abctech.example">Contact HR <span aria-hidden="true">↗</span></a>
+        </div>
+        <button id="logout-button" class="logout-button" type="button">
+          <span class="nav-icon" aria-hidden="true">↪</span><span>Sign out</span>
+        </button>
+      </div>
+    </aside>
+
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    <section class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+          <div class="breadcrumb"><span>Workspace</span><span aria-hidden="true">/</span><strong id="breadcrumb-current">Dashboard</strong></div>
+        </div>
+        <div class="topbar-right">
+          <span id="today-label" class="today-label"></span>
+          <span class="topbar-divider"></span>
+          <div class="user-chip">
+            <span class="avatar">JD</span>
+            <span class="user-meta"><strong>Jordan Davis</strong><small>Administrator</small></span>
+            <span class="user-chevron" aria-hidden="true">⌄</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <section id="page-dashboard" class="page-section active" aria-labelledby="dashboard-title">
+          <div class="welcome-banner">
+            <div class="welcome-copy">
+              <p id="dashboard-date" class="eyebrow"></p>
+              <h1 id="dashboard-title">Welcome to ABC Technologies<span>.</span></h1>
+              <p>A place to stay in the loop, get to know your team, and feel at home.</p>
+            </div>
+            <div class="welcome-decoration" aria-hidden="true">
+              <div class="welcome-circle circle-a"></div><div class="welcome-circle circle-b"></div>
+              <div class="welcome-sun">✳</div>
+            </div>
+          </div>
+          <div class="stat-grid">
+            <article class="stat-card">
+              <div class="stat-icon stat-blue" aria-hidden="true">♙</div>
+              <div><p>Total employees</p><strong id="stat-employees">0</strong><span class="stat-note">Across the company</span></div>
+              <span class="stat-accent accent-blue"></span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon stat-purple" aria-hidden="true">♧</div>
+              <div><p>Departments</p><strong>5</strong><span class="stat-note">Teams working as one</span></div>
+              <span class="stat-accent accent-purple"></span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon stat-amber" aria-hidden="true">▤</div>
+              <div><p>Latest updates</p><strong id="stat-updates">0</strong><span class="stat-note">Company announcements</span></div>
+              <span class="stat-accent accent-amber"></span>
+            </article>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel announcements-panel" aria-labelledby="recent-title">
+              <div class="panel-heading">
+                <div><p class="eyebrow">THE LATEST</p><h2 id="recent-title">Recent announcements</h2></div>
+                <button class="text-link" type="button" data-goto="announcements">View all <span aria-hidden="true">→</span></button>
+              </div>
+              <div id="recent-announcements" class="recent-list"></div>
+            </section>
+            <aside class="panel date-panel" aria-labelledby="date-panel-title">
+              <div class="date-panel-top">
+                <span class="date-icon" aria-hidden="true">✳</span><span class="eyebrow">MARK YOUR CALENDAR</span>
+              </div>
+              <h2 id="date-panel-title">Time to recharge.</h2>
+              <p>Take a look at the upcoming company holidays and start planning something wonderful.</p>
+              <button class="button button-light" type="button" data-goto="holidays">Explore holidays <span aria-hidden="true">→</span></button>
+              <span class="date-decoration" aria-hidden="true">✳</span>
+            </aside>
+          </div>
+          <section class="panel teams-panel" aria-labelledby="teams-title">
+            <div class="panel-heading">
+              <div><p class="eyebrow">BETTER TOGETHER</p><h2 id="teams-title">Meet our departments</h2></div>
+              <button class="text-link" type="button" data-goto="departments">Employee directory <span aria-hidden="true">→</span></button>
+            </div>
+            <div id="department-preview" class="department-preview"></div>
+          </section>
+        </section>
+
+        <section id="page-departments" class="page-section" aria-labelledby="departments-title" hidden>
+          <div class="page-heading">
+            <p class="eyebrow">THE PEOPLE BEHIND THE WORK</p>
+            <h1 id="departments-title">Employee directory</h1>
+            <p>Get to know the people and teams behind ABC Technologies.</p>
+          </div>
+          <div class="directory-toolbar">
+            <span id="directory-total" class="directory-total"></span>
+            <button id="add-employee-button" class="button button-primary" type="button"><span aria-hidden="true">＋</span> Add employee</button>
+          </div>
+          <form id="employee-form" class="announcement-form employee-form" hidden>
+            <div class="form-heading">
+              <div><p class="eyebrow">EMPLOYEE DIRECTORY</p><h2 id="employee-form-heading">Add employee</h2></div>
+              <button class="icon-button" type="button" data-close-form="employee-form" aria-label="Close form">×</button>
+            </div>
+            <input id="employee-form-id" type="hidden">
+            <label for="employee-name">Employee name</label>
+            <input id="employee-name" type="text" maxlength="80" placeholder="Enter employee name" required>
+            <label for="employee-designation">Designation</label>
+            <input id="employee-designation" type="text" maxlength="80" placeholder="Enter job title or designation" required>
+            <label for="employee-department">Department</label>
+            <select id="employee-department" required></select>
+            <div class="form-actions"><button id="employee-submit" class="button button-primary" type="submit">Add employee</button></div>
+          </form>
+          <form id="head-form" class="announcement-form employee-form" hidden>
+            <div class="form-heading">
+              <div><p class="eyebrow">DEPARTMENT LEADERSHIP</p><h2 id="head-form-heading">Add department head</h2></div>
+              <button class="icon-button" type="button" data-close-form="head-form" aria-label="Close form">×</button>
+            </div>
+            <input id="head-department-id" type="hidden">
+            <label for="head-name">Department head name</label>
+            <input id="head-name" type="text" maxlength="80" placeholder="Enter department head name" required>
+            <div class="form-actions"><button id="head-submit" class="button button-primary" type="submit">Save department head</button></div>
+          </form>
+          <div id="department-grid" class="department-grid employee-directory-grid"></div>
+          <div class="info-note"><span aria-hidden="true">✦</span><p><strong>One team, many talents.</strong> Every department plays an important part in what we do.</p></div>
+        </section>
+
+        <section id="page-announcements" class="page-section" aria-labelledby="announcements-title" hidden>
+          <div class="page-heading updates-heading">
+            <div><p class="eyebrow">WHAT'S HAPPENING</p><h1 id="announcements-title">Company updates</h1><p>News, notes, and milestones from around ABC Technologies.</p></div>
+            <button id="add-announcement-button" class="button button-primary" type="button"><span aria-hidden="true">＋</span> Add announcement</button>
+          </div>
+          <form id="announcement-form" class="announcement-form" hidden>
+            <div class="form-heading"><div><p class="eyebrow">SHARE WITH THE TEAM</p><h2>New announcement</h2></div><button id="cancel-announcement" class="icon-button" type="button" aria-label="Close form">×</button></div>
+            <label for="announcement-title">Announcement title</label>
+            <input id="announcement-title" name="title" type="text" maxlength="100" placeholder="e.g. Welcome to our new office" required>
+            <label for="announcement-body">A little more detail <span class="optional">(optional)</span></label>
+            <textarea id="announcement-body" name="body" rows="3" maxlength="400" placeholder="Share the details with your colleagues..."></textarea>
+            <div class="form-actions"><button class="button button-primary" type="submit">Publish announcement</button></div>
+          </form>
+          <div class="announcement-toolbar"><span id="announcement-count"></span><span class="admin-label"><span aria-hidden="true">●</span> Admin controls enabled</span></div>
+          <div id="announcement-list" class="announcement-list"></div>
+        </section>
+
+        <section id="page-holidays" class="page-section" aria-labelledby="holidays-title" hidden>
+          <div class="page-heading">
+            <p class="eyebrow">SAVE THE DATE</p>
+            <h1 id="holidays-title">Company holidays</h1>
+            <p>Make room for a little rest, celebration, and time with your favorite people.</p>
+          </div>
+          <div class="holiday-intro"><span class="holiday-intro-icon" aria-hidden="true">✳</span><div><strong>Take a well-deserved break.</strong><p>Here are the company-wide holidays to look forward to.</p></div></div>
+          <div class="panel holiday-panel">
+            <div class="holiday-table-head"><span>HOLIDAY</span><span>DATE</span><span>DAY</span></div>
+            <div id="holiday-list" class="holiday-list"></div>
+          </div>
+          <p class="holiday-footnote">Holiday dates reflect the 2026 company calendar. Please check with your manager for team-specific schedules.</p>
+        </section>
+      </main>
+      <footer class="page-footer"><span>© 2026 ABC Technologies</span><span>Made for people, by people <span class="footer-heart" aria-hidden="true">♥</span></span></footer>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
